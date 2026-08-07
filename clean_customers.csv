@@ -1,0 +1,11 @@
+customer_id,full_name,email,phone,signup_date
+2,Bob Jones,bob.jones@example.com,5559876543,2023-09-15
+10,Jane Doe,jane.doe@example.com,442071231234,2023-09-10
+9,Ian Malcolm,ian@jurassic.com,1800555,2023-08-20
+8,Hannah Abbott,unknown@domain.com,,2023-07-01
+7,George Costanza,george@vandelay.com,5553334444,2023-06-15
+1,Alice Smith,alice.smith@example.com,15551234567,2023-06-01
+6,Fiona Gallagher,fiona@example.com,5551112222,2023-05-12
+5,Evan Wright,evan@example.com,,2023-04-15
+4,Diana Prince,diana@example.com,444,2023-04-10
+3,Charlie Brown,charlie.b@example.com,1234567890,2023-03-05
