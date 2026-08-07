@@ -36,14 +36,46 @@ Data Engineer Assignment/
 ├── shopdata.db              # Source database
 ├── README.md
 │
-├── analystics.db            # Output database
+├── analytics.db             # Output database
+├── clean_customers.csv      # Output customer dataset
+└── clean_orders.csv         # Output order dataset
 ```
 
 ---
 
 # How to Run the Pipeline
 
-## Run ETL Flow
+## 1. Clone Repository
+
+```bash
+git clone <repository-url>
+
+cd "Data Engineer Assignment"
+```
+
+---
+
+## 2. Create Virtual Environment
+
+Windows:
+
+```bash
+python -m venv venv
+
+venv\Scripts\activate
+```
+
+---
+
+## 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 4. Run ETL Flow
 
 Execute the pipeline:
 
@@ -59,7 +91,9 @@ The flow will:
 * Generate output files:
 
 ```
-analystics.db 
+analytics.db
+clean_customers.csv
+clean_orders.csv
 ```
 
 ---
@@ -116,7 +150,7 @@ During data exploration, the raw customer and order datasets were analyzed to id
 
 ### Duplicate Records
 
-The customer dataset contained duplicate records based on customer_id.
+The customer dataset contained duplicate records based on customer identifiers.
 
 To solve this issue:
 
@@ -177,7 +211,9 @@ The order dataset was checked for:
                Load Output
                     |
                     v
-       analytics.db
+              analytics.db
+           clean_customers.csv
+            clean_orders.csv
 ```
 
----
+```
