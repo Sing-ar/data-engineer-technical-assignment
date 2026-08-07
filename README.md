@@ -19,7 +19,6 @@ The pipeline processes customer and order data through the following steps:
 * Python 3.11
 * Pandas
 * SQLite
-* SQLAlchemy
 * Prefect (Workflow Orchestration)
 * Pytest
 * Structlog
@@ -37,45 +36,14 @@ Data Engineer Assignment/
 ├── shopdata.db              # Source database
 ├── README.md
 │
-├── clean_customers.csv      # Output customer dataset
-└── clean_orders.csv         # Output order dataset
+├── analystics.db            # Output database
 ```
 
 ---
 
 # How to Run the Pipeline
 
-## 1. Clone Repository
-
-```bash
-git clone <repository-url>
-
-cd "Data Engineer Assignment"
-```
-
----
-
-## 2. Create Virtual Environment
-
-Windows:
-
-```bash
-python -m venv venv
-
-venv\Scripts\activate
-```
-
----
-
-## 3. Install Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## 4. Run ETL Flow
+## Run ETL Flow
 
 Execute the pipeline:
 
@@ -91,8 +59,7 @@ The flow will:
 * Generate output files:
 
 ```
-clean_customers.csv
-clean_orders.csv
+analystics.db 
 ```
 
 ---
@@ -132,11 +99,11 @@ Example:
 def test_currency_conversion():
 
     result = convert_currency(
-        amount=100,
-        exchange_rate=35
+        amount = 100,
+        exchange_rate = 1.2
     )
 
-    assert result == 3500
+    assert result == 120
 ```
 
 ---
@@ -149,7 +116,7 @@ During data exploration, the raw customer and order datasets were analyzed to id
 
 ### Duplicate Records
 
-The customer dataset contained duplicate records based on customer identifiers/email addresses.
+The customer dataset contained duplicate records based on customer_id.
 
 To solve this issue:
 
@@ -192,27 +159,6 @@ The order dataset was checked for:
 * Incorrect data types
 * Invalid numerical values
 
-### Revenue Calculation
-
-Order revenue was calculated using:
-
-```
-Revenue = Quantity × Price
-```
-
-This created a consistent metric for downstream analytics.
-
----
-
-# Data Quality Checks
-
-The pipeline includes validation checks:
-
-* Required columns exist
-* Duplicate records removed
-* Data types validated
-* Output files generated successfully
-
 ---
 
 # ETL Pipeline Design
@@ -231,27 +177,7 @@ The pipeline includes validation checks:
                Load Output
                     |
                     v
-       clean_customers.csv
-       clean_orders.csv
+       analytics.db
 ```
 
 ---
-
-# Future Improvements
-
-Potential improvements:
-
-* Add incremental loading
-* Store processed data in a data warehouse
-* Add automated data quality monitoring
-* Schedule pipeline execution using Prefect deployment
-* Add CI/CD pipeline for automated testing
-
----
-
-# Author
-
-Data Engineer Assignment Project
-
-```
-```
